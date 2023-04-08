@@ -1,8 +1,9 @@
-function genRoom(name) {
+function genRoom(name, color) {
     let p = document.getElementById('rooms');
     let elem = document.createElement('div');
     elem.className = 'room';
     elem.innerHTML = name;
+    elem.style.background = color;
     p.appendChild(elem);
 }
 
