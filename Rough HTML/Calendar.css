@@ -52,3 +52,9 @@
 .day:nth-child(7):before {
     content: 'Sunday';
 }
+.block {
+    opacity: 50%;
+    background: red;
+    width: 100%;
+    position: absolute;
+}
