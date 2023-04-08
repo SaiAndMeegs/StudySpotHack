@@ -14,7 +14,7 @@ function genBuilding(name) {
     p.appendChild(elem);
 }
 
-function genBlock(day, start, length) {
+function genBlock(day, start, length, color) {
     let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
     let cal = document.getElementById('calendar');
     if(typeof day === 'string') day = days.indexOf(day);
@@ -23,5 +23,6 @@ function genBlock(day, start, length) {
     elem.className = 'block';
     elem.style.top = start + 'px';
     elem.style.length = length + 'px';
+    elem.style.background = color;
     p.appendChild(elem);
 }
