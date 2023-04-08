@@ -1,0 +1,54 @@
+#calendar {
+    background-image: repeating-linear-gradient(#0000 0px, #0000 59px, #888 59px, #888 60px);
+    border-top: 1px solid #888;
+    height: 1080px;
+    display: grid;
+    grid-template-columns: 14.2857143% 14.2857143% 14.2857143% 14.2857143% 14.2857143% 14.2857143% 14.2857143%;
+    margin-top: 5vw;
+}
+#calendar:before {
+    content: '6:00am 7:00am 8:00am 9:00am 10:00am 11:00am 12:00pm 1:00pm 2:00pm 3:00pm 4:00pm 5:00pm 6:00pm 7:00pm 8:00pm 9:00pm 10:00pm 11:00pm 12:00am';
+    overflow: wrap;
+    font-size: 15px;    
+    width: 80px;
+    padding-right: 10px;
+    position: absolute;
+    text-align: right;
+    line-height: 60px;
+    transform: translate(-100%, -30px);
+    color: black;
+}
+.day {
+    border-right: 1px solid #888;
+    position: relative;
+}
+.day:nth-child(1) {
+    border-left: 1px solid #888;
+}
+.day:before {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transform: translateY(-150%);
+}
+.day:nth-child(1):before {
+    content: 'Monday';
+}
+.day:nth-child(2):before {
+    content: 'Tuesday';
+}
+.day:nth-child(3):before {
+    content: 'Wednesday';
+}
+.day:nth-child(4):before {
+    content: 'Thursday';
+}
+.day:nth-child(5):before {
+    content: 'Friday';
+}
+.day:nth-child(6):before {
+    content: 'Saturday';
+}
+.day:nth-child(7):before {
+    content: 'Sunday';
+}
