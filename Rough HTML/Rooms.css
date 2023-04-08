@@ -1,0 +1,13 @@
+.room {
+    border-bottom: 1px solid #888;
+    background: #f001;
+    padding: .5vw 1vw;
+    font-size: 1vw;
+    cursor: pointer;
+}
+.room:hover {
+    background: #f003;
+}
+.room:nth-child(1) {
+    border-top: 1px solid #888;
+}
