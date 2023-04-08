@@ -1,12 +1,15 @@
 .room {
     border-bottom: 1px solid #888;
-    background: #f001;
+    background: #f003;
     padding: .5vw 1vw;
     font-size: 1vw;
     cursor: pointer;
+    transition: all .1s;
+    opacity: 80%;
 }
 .room:hover {
-    background: #f003;
+    opacity: 100%;
+    font-size: 1.1vw;
 }
 .room:nth-child(1) {
     border-top: 1px solid #888;

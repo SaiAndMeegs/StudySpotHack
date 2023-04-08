@@ -8,11 +8,21 @@
     justify-content: center;
     text-align: center;
     aspect-ratio: 3;
-    color: white;
-    background: red;
-    margin: 1%;
+    background: #00f3;
+    margin: 3% 2%;
     position: relative;
-    box-shadow: 3px 3px 3px #ccc;
     border-radius: 10px;
     font-size: 1.2vw;
+    box-shadow: 0 5px #777, 0 0 0 #ccc;
+    transform: translateY(0);
+    transition: all .3s ease;
+    border: 3px solid #999;
+}
+.building:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px #777, 0 15px 15px #ccc;
+}
+.building:active{
+    box-shadow: 0 5px #777, 0 0 0 #ccc;
+    transform: translateY(0);
 }
