@@ -1,0 +1,18 @@
+#buildings {
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.building {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    aspect-ratio: 3;
+    color: white;
+    background: red;
+    margin: 1%;
+    position: relative;
+    box-shadow: 3px 3px 3px #ccc;
+    border-radius: 10px;
+    font-size: 1.2vw;
+}
