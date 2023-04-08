@@ -1,6 +1,7 @@
 function genRoom(name, color) {
     let p = document.getElementById('rooms');
-    let elem = document.createElement('div');
+    let elem = document.createElement('a');
+    elem.href = './rooms/' + name;
     elem.className = 'room';
     elem.innerHTML = name;
     elem.style.background = color;
@@ -9,7 +10,8 @@ function genRoom(name, color) {
 
 function genBuilding(name) {
     let p = document.getElementById('buildings');
-    let elem = document.createElement('div');
+    let elem = document.createElement('a');
+    elem.href = './buildings/' + id;
     elem.className = 'building';
     elem.innerHTML = `<h2>${name}</h2>`;
     p.appendChild(elem);
