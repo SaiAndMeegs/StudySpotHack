@@ -7,12 +7,28 @@
     <title>Document</title>
     <link rel="stylesheet" href="Buildings.css">
     <link rel="stylesheet" href="Index.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let searchBar = document.getElementsByClassName('search-bar')[0];
+            let toSearch = Array.from(document.getElementsByClassName('building'));
+            searchBar.addEventListener('input', (e) => {
+                toSearch.forEach(elem => {
+                    let name = elem.children[0].innerHTML.toLowerCase();
+                    elem.classList.remove('invisible');
+                    if(name.indexOf(e.target.value.toLowerCase()) !== 0) {
+                        elem.classList.add('invisible');
+                    }
+                })
+            });
+        })
+    </script>
 </head>
 <body>
     <nav>
         <a href="./buildings.html"><img class='logo' src="logo.png" alt="Study Spot"></a>
         <h1 class="title">Buildings at the University of Massachusetts, Amherst</h1>
     </nav>
+    <input class="search-bar" placeholder="Search buildings here"/>
     <div id="buildings" class="container">
         <a class='building'>
             <h2>Fine Arts Center</h2>
