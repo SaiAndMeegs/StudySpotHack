@@ -3,7 +3,7 @@ const express = require("express");
 const cors = require('cors');
 const fs = require('fs');
 const app = express();
-const PORT = process.env.PORT || 5001;
+const port = process.env.PORT || 5001;
 const Pool = require('pg').Pool
 const axios = require('axios')
 
@@ -75,7 +75,12 @@ const insertMeetingInformation = async (meeting_information_id, days, start_time
     }
 };
 
-console.log(axios)
+axios.get("http://spire-api.melanson.dev/sections/").then((resp) => {
+    console.log(resp.data.results[1])
+
+    
+    
+})
 
 
 
