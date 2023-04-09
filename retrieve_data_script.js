@@ -228,14 +228,3 @@ axios.get("http://spire-api.melanson.dev/buildings/").then(async (resp) => {
     //}
 
     //insertCourse(course.spire_id, course.offering.course.title, course.meeting_information[0].instructors[0].name, course.description, 123)
-
-
-
-
-
-
-
-
-
-
-
