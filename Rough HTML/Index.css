@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: 'Kanit', sans-serif;
     background: #bfe3f133;
+    overflow: hidden;
 }
 
 .container {
@@ -39,4 +40,18 @@ a {
     text-decoration: none;
     cursor: pointer;
     display: block;
+}
+
+.invisible {
+    display: none;
+}
+
+.search-bar {
+    background: white;
+    border: 0px;
+    border-bottom: 2px solid black;
+    outline: 0;
+    padding: 10px;
+    width: 90vw;
+    margin: 2vw 5vw;
 }
