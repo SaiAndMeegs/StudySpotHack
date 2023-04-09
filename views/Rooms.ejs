@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/Index.css">
+    <link rel="stylesheet" href="css/Rooms.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let searchBar = document.getElementsByClassName('search-bar')[0];
+            let toSearch = Array.from(document.getElementsByClassName('room'));
+            searchBar.addEventListener('input', (e) => {
+                toSearch.forEach(elem => {
+                    let name = elem.innerHTML.toLowerCase();
+                    elem.classList.remove('invisible');
+                    if(name.indexOf(e.target.value.toLowerCase()) !== 0) {
+                        elem.classList.add('invisible');
+                    }
+                })
+            });
+        })
+    </script>
+</head>
+<body>
+    <nav>
+        <a href="./"><img class='logo' src="logo.png" alt="Study Spot"></a>
+        <h1 class="title">Rooms</h1>
+    </nav>
+    <input class="search-bar" placeholder="Search buildings here"/>
+    <div id="rooms" class="container">
+        <script>
+            let url = 'http://localhost:5001/building_rooms/' + localStorage.getItem('room_id')
+
+            fetch(url).then(response => response.json()).then(data => {
+                data.forEach(building_room => {
+                    let p = document.getElementById('rooms');
+                    let elem = document.createElement('a');
+                    elem.href = './rooms/' + name;
+                    elem.className = 'room';
+                    elem.innerHTML = name;
+                    elem.style.borderColor = color;
+                    p.appendChild(elem);
+                })
+                console.log(data);
+            })
+            .catch(err => console.error(err))
+            
+
+        </script>
+
+        <a class='room'>N111</a>
+        <a class='room'>N112</a>
+        <a class='room'>N113</a>
+        <a class='room'>N114</a>
+        <a class='room'>N115</a>
+        <a class='room'>N116</a>
+        <a class='room'>N117</a>
+        <a class='room'>N118</a>
+    </div>
+</body>
+</html>
