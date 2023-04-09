@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../css/Index.css">
-    <link rel="stylesheet" href="../css/Rooms.css">
+    <link rel="stylesheet" href="../../../css/Index.css">
+    <link rel="stylesheet" href="../../../css/Rooms.css">
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             let searchBar = document.getElementsByClassName('search-bar')[0];
@@ -25,24 +25,25 @@
 </head>
 <body>
     <nav>
-        <a href=""><img class='logo' src="../logo.png" alt="Study Spot"></a>
+        <a href="../"><img class='logo' src="../logo.png" alt="Study Spot"></a>
         <h1 class="title">Rooms</h1>
     </nav>
     <input class="search-bar" placeholder="Search buildings here"/>
     <div id="rooms" class="container">
         <script>
-            let url = 'http://localhost:5001/building_rooms/' + localStorage.getItem('building_id')
+            let url = 'http://localhost:5001/building_rooms/' + localStorage.getItem('building_id');
 
             fetch(url).then(response => response.json()).then(data => {
                 data.forEach(building_room => {
                     let p = document.getElementById('rooms');
                     let elem = document.createElement('a');
-                    elem.href = '../calendar/'
+                    elem.href = '../../calendar/'
                     elem.className = 'room';
                     elem.innerHTML = building_room.building_room_name;
                     elem.style.borderColor = 'green';
+                    elem.onclick = () => localStorage.setItem('curr_building_room_id', building_room.building_room_id)
+                    
                     p.appendChild(elem);
-                    localStorage.setItem('curr_building_room_id', building_room.building_room_id)
                 })
                 console.log(data);
             })

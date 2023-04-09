@@ -37,12 +37,12 @@
                 data.forEach(building => {
                     let p = document.getElementById('buildings');
                     let elem = document.createElement('a');
-                    elem.href = './rooms/';
+                    elem.href = './rooms/' + building.building_id + "/" + building.building_name;
                     elem.className = 'building';
                     elem.innerHTML = `<h2>${building.building_name}</h2>`;
+                    elem.onclick = () => {localStorage.setItem('building_id', building.building_id)}
                     p.appendChild(elem);
-                    localStorage.setItem('building_id', building.building_id)
-                    localStorage.setItem('building_name', building.building_name)
+                    
 
                 })
                 console.log(data);

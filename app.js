@@ -40,7 +40,7 @@ app.get('/rooms/', (req, res) => {
 app.get('/rooms/:id/:name', (req, res) => {
     param_id = req.params.id
     param_name = req.params.name
-    res.render('Rooms')
+    res.render('Rooms', {id: param_id, name: param_name})
 })
 
 app.get('/Calendar', (req, res) => {

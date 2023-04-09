@@ -10,10 +10,34 @@
 </head>
 <body>
     <nav>
-        <a  href="./"><img class='logo' src="../logo.png" alt="Study Spot"></a>
+        <a  href="../"><img class='logo' src="../logo.png" alt="Study Spot"></a>
         <h1 class="title">Calendar</h1>
     </nav>
     <div id="calendar" class="container">
+        <script>
+            let url = 'http://localhost:5001/course_meetings/' + localStorage.getItem('curr_building_room_id')
+
+            fetch(url).then(response => response.json()).then(data => {
+                console.log(data)
+                data.forEach(course_meeting => {
+                    let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+                    let cal = document.getElementById('calendar');
+                    if(typeof course_meeting.days[0].toLowerCase() === 'string') course_meeting.days[0].toLowerCase() = days.indexOf(course_meeting.days[0].toLowerCase());
+                    let p = cal.children[course_meeting.days[0].toLowerCase()];
+                    let elem = document.createElement('div');
+                    elem.className = 'block';
+                    elem.style.top = 120 + 'px';
+                    elem.style.length = 180 + 'px';
+                    elem.style.background = color;
+                    p.appendChild(elem);
+                })
+                console.log(data);
+            })
+            .catch(err => console.error(err))
+            
+
+        </script>
+
         <div class='day'>
             <div class='block' style="top: 120px; height: 120px;"></div>
         </div>
