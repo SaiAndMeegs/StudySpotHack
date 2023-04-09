@@ -20,15 +20,22 @@
             fetch(url).then(response => response.json()).then(data => {
                 console.log(data)
                 data.forEach(course_meeting => {
-                    let days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+                    console.log(course_meeting.days[0]);
+
+                    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
                     let cal = document.getElementById('calendar');
-                    if(typeof course_meeting.days[0].toLowerCase() === 'string') course_meeting.days[0].toLowerCase() = days.indexOf(course_meeting.days[0].toLowerCase());
-                    let p = cal.children[course_meeting.days[0].toLowerCase()];
+                    //if(typeof course_meeting.days[0] === 'string') course_meeting.days[0].toLowerCase() = days.indexOf(course_meeting.days[0].toLowerCase());
+                    
+                    let p = cal.children[days.indexOf(course_meeting.days[0])];
                     let elem = document.createElement('div');
                     elem.className = 'block';
-                    elem.style.top = 120 + 'px';
-                    elem.style.length = 180 + 'px';
-                    elem.style.background = color;
+
+                    //18 1 hour blocks, divide by 60 pixels for each hour
+
+                    elem.style.top = Math.round((parseInt(course_meeting.start_time.substring(0,2)) - 6) * 60) + 'px';
+                    elem.style.height = ((parseInt(course_meeting.end_time.substring(0, 2)) - parseInt(course_meeting.start_time.substring(0,2))) * 60).toString + 'px';
+                    elem.style.background = 'red';
+
                     p.appendChild(elem);
                 })
                 console.log(data);
