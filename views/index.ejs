@@ -25,7 +25,7 @@
 </head>
 <body>
     <nav>
-        <a href=""><img class='logo' src="logo.png" alt="Study Spot"></a>
+        <a href="./"><img class='logo' src="logo.png" alt="Study Spot"></a>
         <h1 class="title">Buildings at the University of Massachusetts, Amherst</h1>
     </nav>
     <input class="search-bar" placeholder="Search buildings here"/>
@@ -37,10 +37,13 @@
                 data.forEach(building => {
                     let p = document.getElementById('buildings');
                     let elem = document.createElement('a');
-                    elem.href = './rooms/' + building.building_id + "/" + building.building_name;
+                    elem.href = './rooms/';
                     elem.className = 'building';
                     elem.innerHTML = `<h2>${building.building_name}</h2>`;
                     p.appendChild(elem);
+                    localStorage.setItem('building_id', building.building_id)
+                    localStorage.setItem('building_name', building.building_name)
+
                 })
                 console.log(data);
             })

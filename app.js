@@ -40,8 +40,6 @@ app.get('/rooms/', (req, res) => {
 app.get('/rooms/:id/:name', (req, res) => {
     param_id = req.params.id
     param_name = req.params.name
-    localStorage.setItem('room_id', param_id)
-    localStorage.setItem('room_name', param_name)
     res.render('Rooms')
 })
 
