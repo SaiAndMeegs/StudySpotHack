@@ -4,7 +4,7 @@ function genRoom(name, color) {
     elem.href = './rooms/' + name;
     elem.className = 'room';
     elem.innerHTML = name;
-    elem.style.background = color;
+    elem.style.borderColor = color;
     p.appendChild(elem);
 }
 
